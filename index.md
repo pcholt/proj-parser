@@ -1,4 +1,6 @@
-## Welcome to GitHub Pages
+# proj-parser
+
+## A parser for xcode `.lproj` i18n files
 
 You can use the [editor on GitHub](https://github.com/pcholt/proj-parser/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
