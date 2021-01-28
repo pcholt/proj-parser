@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "com.pcholt"
-version = "1.0-SNAPSHOT"
+version = "0.01"
 
 repositories {
     mavenCentral()
@@ -17,7 +17,7 @@ publishing {
         create<MavenPublication>("kot") {
             groupId = "com.pcholt"
             artifactId = "lprojectile"
-            version = "1.0"
+            version = "0.02"
 
 //            from(components["java"])
             from(components["kotlin"])
@@ -26,9 +26,8 @@ publishing {
     repositories {
         maven {
             name = "pcholt"
-            url = uri("sftp://pcholt.com/repository/$buildDir/repo/release")
-
-            
+            url = uri("https://pcholt.com/maven")
+            credentials(PasswordCredentials::class)
         }
     }
 }

@@ -13,10 +13,10 @@ internal class MapConstructorKtTest {
     fun parserTest() {
         LProjParser.parseString(
             """
-            aaa="test";
+            aaa="test🤡";    
         """.trimIndent()
         ).toMap().let {
-            asserter.assertEquals("simplest test", "test", it["aaa"])
+            asserter.assertEquals("simplest test", "test\uD83E\uDD21", it["aaa"])
         }
 
     }
@@ -62,4 +62,13 @@ internal class MapConstructorKtTest {
 
     }
 
+
+}
+
+
+fun main() {
+    val map = LProjParser.parseFile("Default.lproj").toMap()
+    map.forEach { key, value ->
+        println("$key = $value")
+    }
 }
